@@ -8,7 +8,13 @@ public class Contador {
 	public Map<Character, Integer> calcula(String palavra) {
 		Map<Character, Integer> d = new HashMap<>();
 
-		// seu código aqui
+		for (int i = 0; i < palavra.length(); i++) {
+			char c = palavra.charAt(i);
+			if (!d.containsKey(c)) {
+				d.put(c, 0);
+			}
+			d.put(c, d.get(c) + 1);
+		}
 
 		return d;
 	}

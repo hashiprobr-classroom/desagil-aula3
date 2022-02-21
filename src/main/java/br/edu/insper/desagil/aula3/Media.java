@@ -6,7 +6,13 @@ import java.util.Map;
 public class Media {
 
 	public double calcula(List<Map<String, Integer>> notas) {
-		return 0.0;
+		int s = 0;
+		int n = 0;
+		for (Map<String, Integer> nota : notas) {
+			s += nota.get("peso") * nota.get("valor");
+			n += nota.get("peso");
+		}
+		return (double) s / n;
 	}
 
 }
